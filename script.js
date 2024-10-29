@@ -3,6 +3,7 @@ let jsLanjut = video
   .filter((vidio) => vidio.textContent.includes("JAVASCRIPT LANJUTAN"))
   .map((item) => item.dataset.duration)
   .map((waktu) => {
+    const parts = waktu.split(":").map((part) => parseFloat(part));
     return parts[0] * 60 + parts[1];
   })
   .reduce((waktu, parts) => waktu + parts);
